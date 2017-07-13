@@ -4,8 +4,19 @@
 <p>Hola mundo en home!</p>
 
 
-<p>Se debería cargar un servicio y mostrar un listado acá abajo:</p>
+<p>Listado que demora acá abajo:</p>
 
+<label for="multipleSelect"> Seleccione País de Europa: </label><br/>
+
+<select size="6" name="ngvalueselect" ng-model="data.model" ng-change="actualizarBandera()" multiple>
+  <option ng-repeat="option in data.availableOptions" ng-value="option.value">{{option.name}}</option>
+</select>
+<br/>
+
+<img ng-src="{{ bandera }}" width="200px"/>
+
+
+<pre>Elementos seleccionados (valor de data.model) = {{data.model | json}}</pre><br/>
 
 <p>Y acá se carga el servicio rápido. </p>
 
@@ -16,7 +27,7 @@
 <br/>
 <button ng-click="llamar()">Llamando servicio</button>
 <br/>
-<button ng-click="modal()">Y sus buenos modales!</button>
+<button  ng-click="abrirModal()">Y sus buenos modales!</button>
 </div>
 
 
